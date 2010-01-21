@@ -1,16 +1,6 @@
-#summary One-sentence summary of this page.
+Runterladen, auspacken, klasse anlegen, ein String @encrypt, commandline ausführen, ergebnis angucken, ergebnis erläutern (Joachim)
 
-= Introduction =
-
-* Runterladen, auspacken, klasse anlegen, ein String @encrypt, commandline ausführen, ergebnis angucken, ergebnis erläutern (Joachim)
-* Unterstützte Datentypen, unterstützte Collections, keine JAXB Annotations,  Beispiel 1:n, 1:n (Joachim)
-
-* Unterstützte Verschlüsselungen & Sicherungen, komplettes Beispiel, KeyGenerator & KeyRing, 
+Unterstützte Datentypen, unterstützte Collections, keine JAXB Annotations,  Beispiel 1:n, 1:n (Joachim)
 
 
-= Details =
-
-Add your content here.  Format your content with:
-  * Text in *bold* or _italic_
-  * Headings, paragraphs, and lists
-  * Automatic links to other wiki pages
+Unterstützte Verschlüsselungen & Sicherungen, komplettes Beispiel, KeyGenerator & KeyRing, 
