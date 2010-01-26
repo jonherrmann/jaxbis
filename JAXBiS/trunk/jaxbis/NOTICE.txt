@@ -1,0 +1,31 @@
+JAXBiS
+Copyright (c) 2010, Joachim Draeger, Jon Herrmann, Simon Müller
+
+   This software was developed at the Free Software Lab of the 
+   University of Applied Sciences Bonn-Rhein-Sieg
+   http://www.fslab.de
+
+   published at http://code.google.com/p/jaxbis/
+
+   This project has been initiated as a students project within a lecture on 
+   service-oriented architecture supervised by Nils Gruschka and Luigi Lo Iacono. 
+   The idea is based on a paper from Nils Gruschka and Luigi Lo Iacono 
+   (both researcher with the NEC Laboratories Europe).
+
+   This product includes software developed at
+   The Apache Software Foundation (http://www.apache.org/).
+
+   - Apache Commons BeanUtils      http://commons.apache.org/beanutils/
+   - Apache Commons Collections    http://commons.apache.org/collections/
+   - Apache Commons Lang           http://commons.apache.org/lang/article2_4.html
+   - Apache log4j                  http://logging.apache.org/log4j/1.2/
+   - Commons Logging               http://commons.apache.org/logging/
+   - Apache Velocity               http://velocity.apache.org/
+   - Apache Xalan                  http://xml.apache.org/xalan-j/
+   - Apache XML Commons XML APIs   http://xerces.apache.org/
+   - Apache XML Security           http://santuario.apache.org/Java/
+   - Jakarta ORO                   http://jakarta.apache.org/oro/
+
+   Please read the LICENSE.txt files in the root directory of 
+   this distribution. Look into the license directory to find 
+   the license- and noticefiles of used classes in our project.
