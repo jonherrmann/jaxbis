@@ -1,0 +1,13 @@
+#!/bin/sh
+
+LINK=`readlink $0`
+if [ -n "$LINK"  ]; then
+        FILE=$LINK
+else
+        FILE=$0
+fi
+DIR=`dirname $FILE`
+
+CP="$DIR/jars/*:$1"
+echo Classpath: $1
+java -cp $CP com.googlecode.jaxbis.generate.GeneratorTool $2 $3
