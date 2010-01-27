@@ -4,6 +4,13 @@
 
 ==Status==
 
+==Requirements==
+
+ * Java 1.6
+ * Linux 
+ * any operating system on which Java 1.6 is available
+  * The distribution contains a Linux script to use the tool. Users familiar with Java should be able to use the tool on other operating systems.
+
 ==Installation==
 
 ==Usage==
