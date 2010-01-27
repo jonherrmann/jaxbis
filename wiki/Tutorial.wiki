@@ -2,21 +2,40 @@
 
 ==About==
 
-==Status==
+JAXBiS is a prototype implementation of JAXB-like annotations to sign or encrypt parts of your objects using XmlSec. http://code.google.com/p/jaxbis/
 
 ==Requirements==
 
  * Java 1.6
- * Linux 
+ * Linux or
  * any operating system on which Java 1.6 is available
   * The distribution contains a Linux script to use the tool. Users familiar with Java should be able to use the tool on other operating systems.
 
 ==Installation==
 
+ * Download current distribution from http://code.google.com/p/jaxbis/downloads/list and unpack it to a directory of your choice.
+ * You may want to create a symlink in a directory that is inside your PATH
+  * for example: {{{$ ln -s /home/user/jaxbis-0.0.1/jaxbis /home/user/bin/jaxbis}}}
+
 ==Usage==
 
+You can invoke the JAXBiS command line tool using the following syntax:
 
-Runterladen, auspacken, klasse anlegen, ein String @encrypt, commandline ausführen, ergebnis angucken, ergebnis erläutern (Joachim)
+{{{
+jaxbis classpath classname [outputdirectory]
+}}}
+
+Example:
+
+{{{
+jaxbis build/classes examble.MyClass src/generated
+}}}
+
+In order to use JAXBiS you need to compile your annotated classes first. 
+
+== Notes ==
+
+klasse anlegen, ein String @encrypt, commandline ausführen, ergebnis angucken, ergebnis erläutern (Joachim)
 
 Unterstützte Datentypen, unterstützte Collections, keine JAXB Annotations,  Beispiel 1:n, 1:n (Joachim)
 
