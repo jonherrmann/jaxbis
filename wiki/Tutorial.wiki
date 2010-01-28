@@ -37,10 +37,11 @@ In order to use JAXBiS you need to compile your annotated classes first.
 ==Secure classes==
 
 JAXBiS supports four annotations to secure data:<br />
-* RSA-AES hybrid encryption via annotation @Encrypt<br />
-* DSA signing and signature verification via @Sign<br />
-* first sign then encrypt data via @SignBeforeEncrypt<br />
-* first encrypt then sign data via @EncryptBeforeSign<br />
+
+ * RSA-AES hybrid encryption via annotation @Encrypt
+ * DSA signing and signature verification via @Sign
+ * first sign then encrypt data via @SignBeforeEncrypt
+ * first encrypt then sign data via @EncryptBeforeSign
 
 Add one of the annotations to the getter-Method of your class to secure a member variable.
 
