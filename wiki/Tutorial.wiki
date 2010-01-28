@@ -31,7 +31,47 @@ Example:
 jaxbis build/classes examble.MyClass src/generated
 }}}
 
-In order to use JAXBiS you need to compile your annotated classes first. 
+In order to use JAXBiS you need to compile your annotated classes first.
+
+
+==Secure classes==
+
+JAXBiS supports four annotations to secure data:
+* RSA-AES hybrid encryption via annotation @Encrypt
+* DSA signing and signature verification via @Sign
+* first sign then encrypt data via @SignBeforeEncrypt
+* first encrypt then sign data via @EncryptBeforeSign
+
+Add one of the annotations to the getter-Method of your class to secure a member variable.
+
+Example:
+{{{
+    @Encrypt
+    public Date getDateOfBirth() {
+        return dateOfBirth;
+    }
+}}}
+
+Run JAXBiS generator as declared in section usage.
+It creates a new class named SecuredMyClass. The secured class received all methods and member variables of MyClass that do not have a JAXBiS annotation. They are accessible without any security check at run-time. Additionally the secured class has a new public method getPlainInstance that expects a KeyRing and will return an unsecured instance of MyClass. 
+A KeyRing stores the private and public keys for signature and encryption.
+
+This simple example will generate a KeyRing with random Keys:
+{{{
+KeyPairGenerator generator =
+    KeyPairGenerator.getInstance("RSA");
+generator.initialize(512);
+final KeyPair encKP = generator.generateKeyPair();
+            
+generator = KeyPairGenerator.getInstance("DSA");
+generator.initialize(1024);
+final KeyPair sigKP = generator.generateKeyPair();
+            
+KeyRing rdmKeyRing = new KeyRing(encKP, sigKP);
+}}}
+
+
+
 
 == Notes ==
 
