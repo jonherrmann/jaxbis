@@ -1,0 +1,72 @@
+# Tutorial #
+
+## About ##
+
+JAXBiS is a prototype implementation of JAXB-like annotations to sign or encrypt parts of your objects using XmlSec. http://code.google.com/p/jaxbis/
+
+## Requirements ##
+
+  * Java 1.6
+  * Linux or
+  * any operating system on which Java 1.6 is available
+    * The distribution contains a Linux script to use the tool. Users familiar with Java should be able to use the tool on other operating systems.
+
+## Installation ##
+
+  * Download current distribution from http://code.google.com/p/jaxbis/downloads/list and unpack it to a directory of your choice.
+  * You may want to create a symlink in a directory that is inside your PATH
+    * for example: `$ ln -s /home/user/jaxbis-0.0.1/jaxbis /home/user/bin/jaxbis`
+
+## Usage ##
+
+You can invoke the JAXBiS command line tool using the following syntax:
+
+```
+jaxbis classpath classname [outputdirectory]
+```
+
+Example:
+
+```
+jaxbis build/classes examble.MyClass src/generated
+```
+
+In order to use JAXBiS you need to compile your annotated classes first.
+
+
+## Secure classes ##
+
+JAXBiS supports four annotations to secure data:<br />
+
+  * RSA-AES hybrid encryption via annotation @Encrypt
+  * DSA signing and signature verification via @Sign
+  * first sign then encrypt data via @SignBeforeEncrypt
+  * first encrypt then sign data via @EncryptBeforeSign
+
+Add one of the annotations to the getter-Method of your class to secure a member variable.
+
+Example:
+```
+    @Encrypt
+    public Date getDateOfBirth() {
+        return dateOfBirth;
+    }
+```
+
+Run JAXBiS generator as declared in section usage.<br />
+It creates a new class named SecuredMyClass. The secured class received all methods and member variables of MyClass that do not have a JAXBiS annotation. They are accessible without any security check at run-time. Additionally the secured class has a new public method getPlainInstance that expects a KeyRing and will return an unsecured instance of MyClass.
+A KeyRing stores the private and public keys for signature and encryption.
+
+This simple example will generate a KeyRing with random Keys:
+```
+KeyPairGenerator generator =
+    KeyPairGenerator.getInstance("RSA");
+generator.initialize(512);
+final KeyPair encKP = generator.generateKeyPair();
+            
+generator = KeyPairGenerator.getInstance("DSA");
+generator.initialize(1024);
+final KeyPair sigKP = generator.generateKeyPair();
+            
+KeyRing rdmKeyRing = new KeyRing(encKP, sigKP);
+```
